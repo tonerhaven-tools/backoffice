@@ -27,7 +27,7 @@ const NavigationBar = () => {
         }
     }, []);
 
-    const { loginWithRedirect, logout, isAuthenticated, user } = useAuth0();
+    const { loginWithPopup, logout, isAuthenticated, user } = useAuth0();
 
     const userImg = user ? user.picture : "";
 
@@ -51,7 +51,7 @@ const NavigationBar = () => {
                             if (isAuthenticated) {
                                 logout();
                             } else {
-                                loginWithRedirect();
+                                loginWithPopup();
                             }
                         }}
                     >
